@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.23)  21 MAR 2013 21:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.8.23)  22 MAR 2013 23:41
 entering extended mode
  %&-line parsing enabled.
 **Cobor-AlgCobordismOutline.tex
@@ -129,8 +129,7 @@ Package ifvtex Info: VTeX not detected.
 \Gm@dimlist=\toks27
 
 (/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
-(/home/glen/Documents/LaTeXDocuments/Commands.tex
-(/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
+(./Commands.tex (/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
 
 (/usr/share/texmf-texlive/tex/latex/tools/array.sty
@@ -462,9 +461,9 @@ ore $\OML/cmm/m/it/10 M[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
 
 <xymatrix 2x2 164> [5] [6] [7] (./Cobor-AlgCobordismOutline.aux) ) 
 Here is how much of TeX's memory you used:
- 6705 strings out of 495061
- 78549 string characters out of 1182621
- 208218 words of memory out of 3000000
+ 6704 strings out of 495061
+ 78443 string characters out of 1182621
+ 208182 words of memory out of 3000000
  9775 multiletter control sequences out of 15000+50000
  9355 words of font info for 39 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191

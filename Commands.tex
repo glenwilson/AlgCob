@@ -1,0 +1,350 @@
+%%%%%%%     PACKAGES      %%%%%%% 
+\usepackage{colortbl}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{xcolor}
+%\usepackage{verse}
+%\usepackage{yfonts}
+
+%%%%%%%  XY PIC COMMANDS  %%%%%%%
+
+\usepackage{xy} 
+\xyoption{all} 
+\newdir{ >}{{}*!/-12pt/@{>}} 
+\newdir{ -}{{}*!/-5pt/@{}} 
+%\newdir{- }{{}*!/-5pt/@{}} 
+\newdir{- }{{}*!/-10pt/@{}} 
+\newdir{ ^(}{{}*!/-5pt/@^{(}} 
+\newdir{ _(}{{}*!/-5pt/@_{(}}
+%\newdir{ |}{{}*!/-5pt/@{|}}
+\newdir{ |}{{}*!/-10pt/@{|}}
+\newdir{_(}{{}*!/0pt/@_{(}}
+\xyoption{arc}
+\xyoption{ps}
+
+%%%%%%%  PS TRICKS         %%%%%%%
+\usepackage{pstricks}
+
+%%%%%%%  AMS THEOREM TAGS  %%%%%%%
+\theoremstyle{plain} 
+
+\newtheorem{hilfssatz}{Hilfssatz}
+\newtheorem{conjecture}{Conjecture} 
+\newtheorem{question}{Question} 
+\newtheorem{corollary}{Corollary} 
+\newtheorem{lemma}{Lemma} 
+\newtheorem{proposition}{Proposition} 
+\newtheorem{algorithm}{Algorithm} 
+\newtheorem*{exercise}{Exercise} 
+\newtheorem{aufgabe}{Aufgabe} 
+\newtheorem{prop}{Proposition}
+
+\theoremstyle{remark} 
+\newtheorem*{prf}{Proof} 
+\newtheorem*{beweis}{Beweis}
+\newtheorem{remark}{Remark} 
+\newtheorem*{remarks}{Remarks} 
+\newtheorem*{solution}{Solution} 
+\newtheorem{Bemerkung}{Bemerkung}
+\newtheorem{observation}{Observation}
+
+\newtheorem*{losung}{L"osung}
+\newtheorem*{lösung}{Lösung}
+
+\theoremstyle{definition} 
+\newtheorem{definition}{Definition} 
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example} 
+\newtheorem{notation}{Notation}
+\newtheorem{Aufgabe}{Aufgabe}
+\newtheorem{convention}{Convention}
+%%%%%%%  MY MATH OPERATORS  %%%%%%%
+
+	%% Set Theoretic / Functions
+\DeclareMathOperator{\im}{im} 		
+		%% Image
+\DeclareMathOperator{\id}{id} 
+		%% identity map 
+\DeclareMathOperator{\card}{card} 
+		%% Cardinality of a set 
+
+	%% Algebraic Operators
+\DeclareMathOperator{\Irr}{Irr} 
+		% Subalgebra of irreducible elts
+\DeclareMathOperator{\Red}{Red} 
+		% Subalgebra of reducible elts
+\DeclareMathOperator{\Hom}{Hom} 
+		% Collection of homomorphisms 
+\DeclareMathOperator{\SL}{SL} 
+		% Special Linear group
+\DeclareMathOperator{\GL}{GL} 
+		% General Linear group
+\DeclareMathOperator{\wt}{wt} 
+		% weight
+\DeclareMathOperator{\Symb}{Symb}
+		% Symbolic algebra
+\DeclareMathOperator{\Span}{span}
+		% Vector space spanning set
+\DeclareMathOperator{\Gal}{Gal}
+		% Galois group
+\DeclareMathOperator{\Char}{char}
+		% Characteristic of a Ring
+\DeclareMathOperator{\Vect}{\underline{Vect}}
+
+\DeclareMathOperator{\Aut}{Aut}
+
+\DeclareMathOperator{\End}{End}
+		% Automorphism Group
+\DeclareMathOperator{\lcm}{lcm}
+		% Least Common Multiple
+\DeclareMathOperator{\mult}{mult}
+		% Multiplicity
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\tor}{Tor}
+		% Homology of right derived functor of tensor product
+\DeclareMathOperator{\trdeg}{tr\ deg}
+		% Transcendence Degree
+\DeclareMathOperator{\krdim}{kr\ dim}
+		% Krull Dimension
+\DeclareMathOperator{\amdim}{AM\ dim}
+		% Atiyah Macdonald dimension
+\DeclareMathOperator{\height}{ht}
+		% height of prime ideal
+\DeclareMathOperator{\amd}{AM\ d}
+		% Atiyah Macdonald degree
+\newcommand{\amdel}{\text{AM }\delta}
+		% Atiyah Macdonald delta
+\DeclareMathOperator{\ord}{ord}
+		% Order
+\DeclareMathOperator{\Open}{Open}
+		% The Open functor.
+\DeclareMathOperator{\Ab}{\underline{Ab}}
+\DeclareMathOperator{\Man}{\underline{Man}}
+\DeclareMathOperator{\Haus}{\underline{Haus}}
+		% Category of Abelian Groups
+\DeclareMathOperator{\Mod}{\underline{Mod}}
+		% The category of Modules (left, right, or commutative)		
+\DeclareMathOperator{\Set}{\underline{Set}}
+		% Set
+\DeclareMathOperator{\Gp}{\underline{Gp}}
+\DeclareMathOperator{\Rng}{\underline{Rng}}
+\DeclareMathOperator{\Top}{\underline{Top}}
+\DeclareMathOperator{\SHot}{\underline{SHot}}
+\DeclareMathOperator{\hTop}{\underline{hTop}}
+\DeclareMathOperator{\Hot}{\underline{Hot}}
+\DeclareMathOperator{\LeftMod}{{\phantom{\Mod}\hspace{-20pt}}_{Λ}{\kern -2pt}\Mod}
+		% left mods
+\DeclareMathOperator{\LeftModPrime}{{\phantom{\Mod}\hspace{-20pt}}_{\Lambda'}{\kern -2pt}\Mod}
+\DeclareMathOperator{\Cat}{\underline{Cat}}
+
+\DeclareMathOperator{\Ext}{Ext}
+		% The right derived functor of $\Hom$
+\DeclareMathOperator{\DirectLim}{\underrightarrow{\lim}}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\gp}{gp}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\cod}{cod}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Sympl}{Sympl}
+
+	%%Topology Operators
+\DeclareMathOperator{\ofK}{\mathbf{ofK}} 
+		% offene Kern
+\DeclareMathOperator{\abH}{\mathbf{abH}} 
+		% abgeschlossene H"ulle
+\DeclareMathOperator{\Ran}{\mathbf{Ran}}
+		% Rand
+\DeclareMathOperator{\Int}{\mathbf{Int}}
+		% Interior
+\DeclareMathOperator{\Cls}{\mathbf{Cls}}
+		% Closure
+\DeclareMathOperator{\Bdy}{\mathbf{Bdy}}
+		% Boundary
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Transl}{Transl}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\length}{length}
+\DeclareMathOperator{\Alg}{\underline{Alg}}
+%%%%%%%  NEW COMMANDS  %%%%%%%
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\newcommand{\st}{ \, \vert \, }
+\newcommand{\paren}[2]{ \left( #1 \right) } 
+\newcommand{\surjectivearrow}{\twoheadrightarrow}
+\newcommand{\bbCP}{\mathbb{CP}} 
+\newcommand{\bbRP}{\mathbb{RP}} 
+
+\newcommand{\der}{\mathrm{d}}
+\newcommand{\normal}{\vartriangleleft}
+
+%%%%%%%  FONT ABBREvS  %%%%%%%
+\newcommand{\bbA}{\mathbb{A}} 
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}} 
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}} 
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}} 
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}} 
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}} 
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}} 
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}} 
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}} 
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+\newcommand{\calA}{\mathcal{A}} 
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}} 
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}} 
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}} 
+\newcommand{\calJ}{\mathcal{J}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calL}{\mathcal{L}} 
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}} 
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}} 
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}} 
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calW}{\mathcal{W}} 
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calZ}{\mathcal{Z}}
+
+\newcommand{\cala}{\mathcal{a}} 
+\newcommand{\calb}{\mathcal{b}}
+\newcommand{\calc}{\mathcal{c}} 
+\newcommand{\cald}{\mathcal{d}}
+\newcommand{\cale}{\mathcal{e}}
+\newcommand{\calf}{\mathcal{f}} 
+\newcommand{\calg}{\mathcal{g}}
+\newcommand{\calh}{\mathcal{h}}
+\newcommand{\cali}{\mathcal{i}} 
+\newcommand{\calj}{\mathcal{j}}
+\newcommand{\calk}{\mathcal{k}}
+\newcommand{\call}{\ell} 
+\newcommand{\calm}{\mathcal{m}}
+\newcommand{\caln}{\mathcal{n}}
+\newcommand{\calo}{\mathcal{o}} 
+\newcommand{\calp}{\mathcal{p}}
+\newcommand{\calq}{\mathcal{q}}
+\newcommand{\calr}{\mathcal{r}} 
+\newcommand{\cals}{\mathcal{s}}
+\newcommand{\calt}{\mathcal{t}}
+\newcommand{\calu}{\mathcal{u}} 
+\newcommand{\calv}{\mathcal{v}}
+\newcommand{\calw}{\mathcal{w}} 
+\newcommand{\calx}{\mathcal{x}}
+\newcommand{\caly}{\mathcal{y}}
+\newcommand{\calz}{\mathcal{z}}
+
+\newcommand{\frakA}{\mathfrak{A}} 
+\newcommand{\frakB}{\mathfrak{B}}
+\newcommand{\frakC}{\mathfrak{C}} 
+\newcommand{\frakD}{\mathfrak{D}}
+\newcommand{\frakE}{\mathfrak{E}}
+\newcommand{\frakF}{\mathfrak{F}} 
+\newcommand{\frakG}{\mathfrak{G}}
+\newcommand{\frakH}{\mathfrak{H}}
+\newcommand{\frakI}{\mathfrak{I}} 
+\newcommand{\frakJ}{\mathfrak{J}}
+\newcommand{\frakK}{\mathfrak{K}}
+\newcommand{\frakL}{\mathfrak{L}} 
+\newcommand{\frakM}{\mathfrak{M}}
+\newcommand{\frakN}{\mathfrak{N}}
+\newcommand{\frakO}{\mathfrak{O}} 
+\newcommand{\frakP}{\mathfrak{P}}
+\newcommand{\frakQ}{\mathfrak{Q}}
+\newcommand{\frakR}{\mathfrak{R}} 
+\newcommand{\frakS}{\mathfrak{S}}
+\newcommand{\frakT}{\mathfrak{T}}
+\newcommand{\frakU}{\mathfrak{U}} 
+\newcommand{\frakV}{\mathfrak{V}}
+\newcommand{\frakW}{\mathfrak{W}} 
+\newcommand{\frakX}{\mathfrak{X}}
+\newcommand{\frakY}{\mathfrak{Y}}
+\newcommand{\frakZ}{\mathfrak{Z}}
+
+\newcommand{\fraka}{\mathfrak{a}} 
+\newcommand{\frakb}{\mathfrak{b}}
+\newcommand{\frakc}{\mathfrak{c}} 
+\newcommand{\frakd}{\mathfrak{d}}
+\newcommand{\frake}{\mathfrak{e}}
+\newcommand{\frakf}{\mathfrak{f}} 
+\newcommand{\frakg}{\mathfrak{g}}
+\newcommand{\frakh}{\mathfrak{h}}
+\newcommand{\fraki}{\mathfrak{i}} 
+\newcommand{\frakj}{\mathfrak{j}}
+\newcommand{\frakk}{\mathfrak{k}}
+\newcommand{\frakl}{\mathfrak{l}} 
+\newcommand{\frakm}{\mathfrak{m}}
+\newcommand{\frakn}{\mathfrak{n}}
+\newcommand{\frako}{\mathfrak{o}} 
+\newcommand{\frakp}{\mathfrak{p}}
+\newcommand{\frakq}{\mathfrak{q}}
+\newcommand{\frakr}{\mathfrak{r}} 
+\newcommand{\fraks}{\mathfrak{s}}
+\newcommand{\frakt}{\mathfrak{t}}
+\newcommand{\fraku}{\mathfrak{u}} 
+\newcommand{\frakv}{\mathfrak{v}}
+\newcommand{\frakw}{\mathfrak{w}} 
+\newcommand{\frakx}{\mathfrak{x}}
+\newcommand{\fraky}{\mathfrak{y}}
+\newcommand{\frakz}{\mathfrak{z}}
+
+\newcommand{\rmA}{\textrm{A}} 
+\newcommand{\rmB}{\textrm{B}}
+\newcommand{\rmC}{\textrm{C}} 
+\newcommand{\rmD}{\textrm{D}}
+\newcommand{\rmE}{\textrm{E}}
+\newcommand{\rmF}{\textrm{F}} 
+\newcommand{\rmG}{\textrm{G}}
+\newcommand{\rmH}{\textrm{H}}
+\newcommand{\rmI}{\textrm{I}} 
+\newcommand{\rmJ}{\textrm{J}}
+\newcommand{\rmK}{\textrm{K}}
+\newcommand{\rmL}{\textrm{L}} 
+\newcommand{\rmM}{\textrm{M}}
+\newcommand{\rmN}{\textrm{N}}
+\newcommand{\rmO}{\textrm{O}} 
+\newcommand{\rmP}{\textrm{P}}
+\newcommand{\rmQ}{\textrm{Q}}
+\newcommand{\rmR}{\textrm{R}} 
+\newcommand{\rmS}{\textrm{S}}
+\newcommand{\rmT}{\textrm{T}}
+\newcommand{\rmU}{\textrm{U}} 
+\newcommand{\rmV}{\textrm{V}}
+\newcommand{\rmW}{\textrm{W}} 
+\newcommand{\rmX}{\textrm{X}}
+\newcommand{\rmY}{\textrm{Y}}
+\newcommand{\rmZ}{\textrm{Z}}
+
+\newcommand{\Mu}{\textrm{M}}
+\newcommand{\Tau}{\textrm{T}}
+%%%%%%%%Spacing%%%%%%%%%%%%%%%%%%%
+\newcommand{\tab}{\hspace{3ex}}
