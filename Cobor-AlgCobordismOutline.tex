@@ -1,0 +1,468 @@
+\documentclass{article}%options: 11pt, A4paper, 
+
+\usepackage{amssymb,amsfonts,amsmath,amsthm} 
+\usepackage[left=1.75in,right=1.75in,bottom=1.5in,top=1in]{geometry}%options:
+%\usepackage{fontspec}
+%\usepackage{xunicode}
+%\usepackage{xltxtra}
+%\usepackage{textpos,multicol,everyshi,rotating}%for positioning text blocks. See XeLaTeXposter for examples
+%\usepackage[clock,weather,alpine]{ifsym}
+%\setlength{\parindent}{0pt}
+%\usepackage{pstricks}
+
+\input{/home/glen/Documents/LaTeXDocuments/Commands}
+%\input{/home/glen/Documents/LaTeXDocuments/Fonts}
+
+\DeclareMathOperator{\Fr}{\underline{Frö}}
+\DeclareMathOperator{\SmMan}{\underline{SmMan}}
+\DeclareMathOperator{\AnMan}{\calA\underline{Man}}
+
+\newcounter{Section}
+\newcounter{Objects}
+\setcounter{Section}{-1}
+\xyoption{rotate}
+
+% Alter some LaTeX defaults for better treatment of figures:
+    % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+
+	% remember to use [htp] or [htpb] for placement
+
+
+\begin{document}
+
+\begin{center}
+{\Large \sc Outline of Algebraic Cobordism Course} 
+
+\bigskip
+
+\end{center}
+
+\section{Spectra, presheaves, formal group laws}
+
+\subsection{Stable homotopy category}
+Want: a nice stable homotopy category, whatever that is! The idea, I
+believe, is that in the stable homotopy category, call it $\SHot$, one
+should have a way of realizing spaces $X, Y \in \Top$ in $\SHot$, call
+the realizations $\Sigma^{\infty}X$, so that $f,g : X \rightarrow Y$
+which are homotopic then satisfy $\Sigma^{\infty}f = \Sigma^{\infty}g$
+and there should be an operation $\Sigma$ extending suspension on
+$\Top$ so that $\SHot(\Sigma^{\infty}X, \Sigma^{\infty}Y)\cong
+\SHot(\Sigma^{\infty}\Sigma X,\Sigma^{\infty}\Sigma Y)$. Furthermore,
+the extended suspension operation should have an inverse $\Omega$, so
+that we see $\Sigma$ is an equivalence of categories. We would like
+the ``universal'' category with these properties I suppose.
+
+Does such a category exist? What kind of description does it have? How
+do we work with it?  For general $\bbX,\bbY\in\SHot$, what does
+$\SHot(\bbX,\bbY)$ mean?  Can we relate this back to the regular
+homotopy category? Such a category exists for any category with a
+``suspension'' functor. See Heller below. 
+
+Adams gives a treatment of it using spectra below. 
+
+\begin{enumerate}
+\item Adams, {\it Stable Homotopy and Generalised Homology}
+\begin{enumerate}[i. ]
+\item Works with Whitehead spectra and $\Omega$-spectra.
+\item Defines homotopy groups of spectra, long exact sequence of
+  homotopy groups of a spectrum pair.
+\item A cofinal subspectrum $E' \subset E$ is a subspectrum
+  (structure maps required to be homeomorphisms) for which given any
+  $K\subseteq E_n$ a subcomplex, there exists an $m$ such that the
+  image of $\Sigma^m K \rightarrow \cdots \rightarrow E_{n+m}$ winds
+  up in $E'_{n+m}$.
+\item Approaches smash product of spectra by defining ``functions'' of
+  spectra, and then defines ``maps'' of spectra as equivalences classes
+  of function on cofinal subspectra which agree on their intersection
+  or some shared cofinal cofinal subspectrum. ``cells now--maps
+  later''. 
+\item Then he defines "morphism" of spectra by modding out by a
+  homotopy relation.
+\item Maps of degree other than 0 are allowed.
+\item Prop 2.8 on p. 145 gives a description for $[E,F]_r$ in the
+  homotopy category of spectra in terms of the expected notion when
+  $E=\Sigma^{\infty}X$.
+\item pp 152--153 detail that suspension is an equivalence and how to
+  see $[X,Y]$ is an abelian group.
+\item The homotopy category of spectra is additive, there are
+  cofibers, and a cofibration sequence. Prop 3.9 p. 155. There is a
+  fibration sequence.
+\item What is meant by Thm 3.12? 
+\item The smash construction is done in his stable category. It is
+  commutative, associative, has unit, up to coherent isom. in the
+  stable category.
+\item Smash product $X\wedge Y$ is messy. Essentially choosing a
+  ``diagonal'' in the 1st quadrant lattice $X_n \wedge Y_m$. He calls a
+  particular choice a ``handicrafted smash product'', and would like to
+  show they are equivalent.
+\item 30 pages of technical details getting handicrafted smash
+  products to work out.
+\end{enumerate}
+
+\item Bousfield; Friedlander, {\it Homotopy theory of $\Gamma$-spaces,
+  spectra, and bisimplicial sets.}
+
+Also discuss spectra and the stable homotopy category, more with a
+view of closed model categories.
+
+\item Heller, {\it Stable Homotopy Categories.}
+
+\begin{enumerate}
+\item ``Categories with suspension'', $(\calC, \Sigma)$,
+  $\Sigma:\calC\rightarrow\calC$ functor.
+\item stable and weakly stable functors of categories with
+  suspension. Let $(\calC,\Sigma)$ and $(\calC',\Sigma)$ be CwS,
+  $F:\calC\rightarrow \calC'$ functor. It is said to be stable if
+  $F\Sigma = \Sigma F : \calC \rightarrow \calC'$ and is said to be
+  weakly stable if there is a natural equivalence $\theta : F \Sigma
+  \rightarrow \Sigma F$. 
+\item A CwS is said to be stable if $\Sigma : \calC \rightarrow \calC$
+  is an automorphism, or equivalence of categories.
+\item To any CwS $(\calC,\Sigma)$ there is a universal stable CwS
+  associated to $\calC$, which we call $s\calC$. There is a weakly
+  stable morphism $S:\calC\rightarrow s\calC$ with $\sigma : \Sigma S
+  \rightarrow S \Sigma$. It enjoys the following universal property:
+  \begin{proposition}
+    If $\calA$ is a stable category, $F:\calC\rightarrow \calA $ is
+    weakly stable with $\theta : F\Sigma \rightarrow \Sigma F$, then
+    there is a unique functor $G: s\calC \rightarrow \calA$ with
+    $G\circ S = F$, and $G\sigma = \theta$
+  \end{proposition}
+\end{enumerate}
+
+In our stable homotopy category, we would like to be able to talk
+about fibrations, cofibrations, long exact sequences, etc. We also
+would like to somehow realize that $\SHot(X,Y)$ is not just a set, but
+an abelian group. So we would like our category to be additive (in the
+hom. alg. sense) and triangulated.
+
+We would also like to be able to use the objects of our stable
+homotopy category to define homology and cohomology theories.
+
+Relation between $s\hTop$ and the category of symmetric spectra?
+Relation with symmetric sequences of Hovey? 
+
+{\bf Heller on homology theories} A homology theory is a functor $h :
+\frakC \rightarrow \calA$ with a natural transformation $\partial$
+where $\calA$ is a stable abelian category, and $\frakC$ has the
+following properties:
+\begin{enumerate}
+\item it is a category with suspension (suggests stability will be
+  involved somehow)
+\item it has a homotopy relation (suggests model category)
+\item it has a collection of triangles (have cofibration sequence)
+\end{enumerate}
+
+\item Hovey; Shipley; Smith, {\it Symmetric Spectra.}
+
+\item Hovey; Palmieri; Strickland, {\it Axiomatic Stable Homotopy Theory.}
+
+\item Puppe, {\it Stabile Homotopietheorie I.}
+
+\item Stong, {\it Notes on Cobordism Theory.}
+
+\item Weibel, {\it An Introduction to Homological Algebra.}
+
+  How does the perspective here relate?
+
+\item Whitehead, {\it Generalized Homology Theories.} 
+
+  Introduces spectra and $\Omega$-spectra. Works only with CW
+  complexes and topological categories. Works out many properties and
+  theorems specific to this case.
+
+\item Brown, {\it Cohomology Theories.} 
+
+  Contains the celebrated Brown representability theorem. 
+
+
+\end{enumerate}
+
+\subsection{Formal Group Laws}
+Adams, {\it Stable Homotopy and Generalised Homology} 
+
+\begin{definition}
+A commutative formal group law is a ring $R$ with a ``multiplication''
+$\mu(x,y)\in R[[x,y]]$ which satisfies:
+\begin{enumerate}
+  \item $\mu(x,0)=x$;
+  \item $\mu(0,y)=y$;
+  \item $\mu(x,y)=\mu(y,x)$;
+  \item $\mu(\mu(x,y),z)=\mu(x,\mu(y,z))$.
+\end{enumerate}
+
+
+A morphism of formal group laws $f:(R,\mu)\rightarrow (S,\nu)$ is a
+ring homomorphism $f: R \rightarrow S$ such that $f_*\mu = \nu$. 
+\end{definition}
+
+\begin{theorem}
+There is a universal commutative formal group law. That is, there is a
+commutative FGL $(\bbL,\mu)$ such that if $(R,\nu)$ is any commutative
+FGL, there exists a unique morphism $f: (\bbL,\mu)\rightarrow
+(R,\nu)$. 
+\end{theorem}
+
+\begin{proof}
+Let $\bbL=\bbZ[a_{ij} \st i,j \in \bbN ]/I$ where $I$ is a particular
+ideal constructed below, and $\mu(x,y)=x+y+\sum a_{ij}x^iy^j$. The
+ideal $I$ is taken to be the one generated by:
+\begin{enumerate}
+\item $a_{ij}-a_{ji}$ to ensure commutativity;
+\item $b_{ijk}$ where $\mu(\mu(x,y),z)-\mu(x,\mu(y,z)) =
+\sum_{i,j,k\geq 1} b_{ijk}x^iy^jz^k$.
+\end{enumerate}
+By construction, $\bbL$ with $\mu(x,y)=x+y+\sum a_{ij}x^iy^j$ is a
+commutative formal group law. We abuse notation and write $a_{ij}$ for
+the class $[a_{ij}] \in \bbL$.
+
+It is also clearly universal. If $(R,\nu)$, $\nu = x+y + \sum
+b_{ij}x^iy^j$ is a commutative FGL, there is a unique ring morphism $f
+: \bbZ[a_{ij} \st i,j \in \bbN ] \rightarrow R$ where $f(a_{ij}) =
+b_{ij}$. Since $\nu$ is a commuatative FGL, all the relations of
+$f(I)=0$, and so $f$ factors uniquely through $\tilde{f}: \bbL
+\rightarrow R$. This map is a morphism of commutative FGLs, and the
+proof is complete.
+\end{proof}
+
+\begin{theorem}
+There is an isomorphism $\bbL \cong \bbZ[x_2,x_4,x_6,...]$ where
+$x_2=a_{11}$, $x_4=a_{12}$, $x_6=a_{22}-a_{13}$, \ldots.
+\end{theorem}
+
+\begin{proof} Given in section 7, p. 64. It is a bit messy. 
+\end{proof}
+
+
+\subsection{ FGLs from oriented cohomology theories}
+
+\begin{definition}
+A ring spectrum is a spectrum $\bbE$ equipped with maps $m : \bbE
+\wedge \bbE \rightarrow \bbE$, $u : \bbS \rightarrow \bbE$ so that the
+following diagrams commute. If we are working with symmetric spectra,
+the diagrams are to commute on the nose, if we are not working with
+symmetric spectra, we need the diagrams to commute in the (stable)
+homotopy category of spectra. 
+
+\begin{center}
+$\xymatrix{ \bbE \wedge \bbE \wedge \bbE \ar[r]^{m \wedge \id} \ar[d]_{\id \wedge m} & \bbE \wedge \bbE \ar[d]^{m} \\ \bbE \wedge \bbE \ar[r]^{m} & \bbE}$ \hspace{1in}
+$\xymatrix{\bbS \wedge \bbE \ar[r]^{u\wedge \id} \ar[dr]_{\pi} & \bbE \wedge \bbE \ar[d]_{m} & \bbE \wedge \bbS \ar[l]_{\id \wedge u} \ar[dl]^{\pi} \\ & \bbE &}$
+
+$\xymatrix{ \bbE \wedge \bbE \ar[r]^{\tau} \ar[rd]_{m} & \bbE \wedge \bbE \ar[d]^{m} \\ & \bbE}$
+\end{center}
+
+That is, a ring spectrum is a commutative monoid in the category of
+symmetric spectra.
+\end{definition}
+
+\begin{definition}
+Let $\bbE$ be a commutative ring spectrum (perhaps also an
+$\Omega$-spectrum). Observe that a commutative ring spectrum has
+canonically defined cohomology classes $[u_n] \in \bbE^n(\bbS^n)$
+given by the map $u_n : \bbS^n \rightarrow E_n$. 
+
+An orientation of $\bbE$ is the choice of a generator $x \in
+\bbE^2(\bbCP^{\infty})$ so that for $\iota : \bbCP^1
+\rightarrow \bbCP^{\infty}$ the standard inclusion, we have
+$\iota^*x = [u_2]$.
+\end{definition}
+
+Why does this definition give an ``orientation'' to a cohomology
+theory? See my comments on this in my Study Guide. 
+
+\begin{theorem}
+If $\bbE$ is an oriented cohomology theory, then we can make some
+specific cohomology and homology calculations. They are proven in
+Adams. The notation $\bbE^*(pt)=\pi_*(\bbE)$ for the coefficients of
+the cohomology theory $\bbE$ is used in Adams. For a ring spectrum
+$\bbE$, the coefficients $\bbE^*(pt)$ is a ring.
+\begin{enumerate}
+\item $\bbE^*(\bbCP^n) \cong \bbE^*(pt)[x]/(x^{n+1})$
+\item $\bbE^*(\bbCP^{\infty} \cong \bbE^*(pt)[[x]]$ 
+\item $\bbE^*( \bbCP^n \times \bbCP^m) \cong \bbE^*(pt) [x_1,x_2] /
+(x_1^{n+1},x_2^{n+2})$
+\item $\bbE^*(\bbCP^{\infty}\times\bbCP^{\infty}) \cong
+\bbE^*(pt)[[x_1,x_2]]$
+\end{enumerate}
+\end{theorem}
+
+Assuming this theorem, we now construct a FGL for $\bbE$. We are to
+think of $x$ as the ``first Chern class'' for our generalized
+cohomology theory. With this, we are able to construct a theory of
+characteristic classes using the splitting principle. 
+
+There is a map $m: \bbCP^{\infty} \times \bbCP^{\infty}
+\rightarrow \bbCP^{\infty}$ which classifies the tensor product of
+the universal line bundles $E_1=\pi_1^*E$, $E_2=\pi_2^*E$ over
+$\bbCP^{\infty}\times \bbCP^{\infty}$ where $E$ is the universal
+line bundle over $\bbCP^{\infty}$ and $\pi_1$ and $\pi_2$ are the
+canonical projections. With $m$ chosen in this fashion---it will be
+unique up to homotopy by basic classifying space theory---we then
+investigate what properties $m^*(x)\in\bbE^*(pt)[[x_1,x_2]]$ has. We
+may write $m^*(x) =\mu(x_1,x_2) = x_1 + x_2 + \sum b_{ij}x_1^i x_2^j$
+where $b_{ij}\in \bbE^*(pt)$, and it is indeed the case that $\mu$ is
+a FGL. How does one see this? Adams says it is easy. First one has to
+make sense of what is being asked, then it is quite easy after all.
+
+We need to check a few things. First off, let us make sense of
+$\mu(\mu(x_1,x_2),x_3) = \mu(x_1,\mu(x_2,x_3))$. Consider the diagram
+\begin{center}
+$\xymatrix{
+  E_1\otimes E_2 \otimes E_3 \ar[r] \ar[d]_{\xi_1\xi_2\xi_3} & E \ar[d]^{\xi} \\
+  \bbCP^{\infty}\times\bbCP^{\infty}\times\bbCP^{\infty}
+  \ar[r]^-{M} & \bbCP^{\infty} }$.
+\end{center}
+It is written ambiguosly without parentheses because they don't matter
+in this diagram; they are all equivalent up to
+homeomorphism. Therefore $M^*(x) = \mu(\mu(x_1,x_2),x_3) =
+\mu(x_1,\mu(x_2,x_3))$. Likewise, we are to interpret $\mu(x,0)=x$ as 
+\begin{center}
+$\xymatrix{
+E_1 \ar[r] \ar[d] &  E \ar[d] \\ 
+\bbCP^{\infty}\times\bbCP^{\infty} \ar[r]^-{\pi_1} & \bbCP^{\infty}
+}$
+\end{center}
+so pulling back $x$ under $pi_1^*$ in $\bbE^*(pt)[[x_1,x_2]]$ is just
+$x_1$. Likewise the commutativity can be seen. 
+
+This method of getting a formal product is just a different way of
+stating the definition in Levine and Morel. Adams shows the usual
+topological examples where $\bbE = H\bbZ$ the Eilenberg-MacLane
+spectrum where $m^*(x)=x_1+x_2$. One can also take $\bbE = K = BGL$,
+the spectrum for $K$-theory, and see that $m^*x = x_1 + x_2 + x_1x_2$. 
+
+Perhaps the other way of writing down the FGL for $\bbE^*$ makes it
+more clear how to work with it and verify the properties. The FGL
+$\mu(x,y)$ is the element of $\bbE^*(pt)[[x,y]]$ such that for any
+line bundles $L_1,L_2$ over $\bbCP^{\infty}$, with classifying maps
+$\xi_1,\xi_2 : \bbCP^{\infty} \rightarrow \bbCP^{\infty}$, define
+$c_1(L_i)= \xi_i^*(x)$. Then we have
+\begin{equation*}
+\mu(c_1(L_1),c_1(L_2)) = c_1(L_1\otimes L_2). 
+\end{equation*}
+In the first definition, it is clear that it exists. In the second
+definition, one has to explain why it exists, but it is immediate how
+one verifies the FGL properties. 
+
+\begin{theorem}
+The FGL associated with the oriented cohomology theory $MU^*$ is the
+universal FGL. That is, there is a map $\phi : \bbL \rightarrow
+MU^*(pt)$ which is an isomorphism so that the push-forward of the
+universal FGL agrees with the FGL on $MU^*$. 
+\end{theorem}
+
+This is discussed in section 8 of Adams's blue book.
+
+
+Levine; Morel. {\it Algebraic Cobordism.}
+
+
+\section{Model Categories}
+\subsection{Generalities}
+
+\begin{enumerate}
+\item J. P. May, {\it More Concise Algebraic Topology}
+\item Davis \& Kirk, {\it Lecture Notes in Algebraic Topology.}
+\item Daniel Quillen, {\it Homotopical Algebra.}
+\item Kathryn Hess, {\it Model Categories in Algebraic Topology.}
+\end{enumerate}
+
+\subsection{Model structures on particular categories}
+
+\subsection{Cohomology theories}
+
+
+\section{Algebraic Cobordism}
+
+\section{Topological Cobordism}
+
+\section{Motivic Cohomology}
+
+
+\section{Complete reference list}
+\begin{enumerate}
+\item Adams, {\it Stable Homotopy and Generalised Homology}
+\item Artin, {\it Grothendieck Topologies.}
+\item Blander, {\it Local projective model structures on simplicial presheaves.}
+\item Boardman, {\it Stable homotopy theory.}
+\item Bott; Tu, {\it Differential Forms in Algebraic Topology.}
+\item Bousfield; Friedlander, {\it Homotopy theory of $\Gamma$-spaces, spectra, and bisimplicial sets.}
+\item Brown, {\it Cohomology Theories.} 
+\item Davis \& Kirk, {\it Lecture Notes in Algebraic Topology.}
+\item Hatcher, {\it Algebraic Topology.}
+\item Heller, {\it Stable Homotopy Categories.}
+\item Hess, {\it Model Categories in Algebraic Topology.}
+\item Hilton \& Stammbach, {\it A Course in Homological Algebra.}
+\item Hopkins; Quick, {\it Hodge filtered complex bordism.}
+\item Hovey, {\it Model categories.}
+\item Hovey, {\it Spectra and symmetric spectra in general model categories.}
+\item Hovey; Shipley; Smith, {\it Symmetric Spectra.}
+\item Hovey; Palmieri; Strickland, {\it Axiomatic Stable Homotopy Theory.}
+\item Jardine, {\it Fields Lectures: Presheaves of spectra} (2007).
+\item Jardine, {\it Fields Lectures: Simplicial presheaves.}
+\item Jardine, {\it Presheaves of symmetric spectra.}
+\item Jardine, {\it Stable homotopy theory of simplicial presheaves.}
+\item Levine; Morel. {\it Algebraic Cobordism.}
+\item Mac Lane, {\it Categories for the Working Mathematician.}
+\item May, {\it A Concise Course in Algebraic Topology.}
+\item May, {\it More Concise Algebraic Topology}
+\item May, {\it Simplicial Objects in Algebraic Topology.}
+\item Mazza; Voevodsky; Weibel, {\it Lecture Notes on Motivic Cohomology.}
+\item Milnor \& Stasheff {\it Characteristic Classes.}
+\item Panin; Pimenov; R\"ondigs, {\it A universality theorem for Voevodsky's algebraic cobordism spectrum.}
+\item Panin; Pimenov; R\"ondigs, {\it On the relation of Voevodsky's algebraic cobordism to Quillen's $K$-theory.}
+\item Panin; Pimenov; R\"ondigs, {\it On Voevodsky's algebraic $K$-theory spectrum $BGL$.}
+\item Puppe, {\it Stabile Homotopietheorie I.}
+\item Quillen, {\it Homotopical Algebra.}
+\item Quillen, {\it On the formal group laws of unoriented and complex cobordism theory.}
+\item Stong, {\it Notes on Cobordism Theory.}
+\item Vick, {\it Homology Theory.}
+\item Voevodsky, {\it Seattle lectures: $K$-theory and motivic cohomology.}
+\item Weibel, {\it An Introduction to Homological Algebra.}
+\item Weston, {\it An Introduction to Cobordism Theory.}
+\item Whitehead, {\it Generalized Homology Theories.} 
+\end{enumerate}
+%Abbildung \ref{Badeszene} zeigt...
+%--------------------------------------------------------------------------------
+%For German stuff: \usepackage[german]{babel}
+%--------------------------------------------------------------------------------
+%"` or \glqq 	„
+%"' or \grqq 	“
+%"< or \flqq 	«
+%"> or \frqq 	 »
+%\flq 	‹
+%\frq 	›
+%\dq 	"
+%--------------------------------------------------------------------------------
+%\def\Sample{Unicode - -- ---}
+%\ImFellEng \Sample \\
+%\Sample ff ffi fl fj fk
+%--------------------------------------------------------------------------------
+%Use \def\<my name>{my whatever} to recall long bits of repeated text or code
+%Use mapping=tex-text to get standard tex lig's in addition to defined lig's
+%Use color=ABCDEF to get colored text
+%	place above at "Font Name:<___>"
+%--------------------------------------------------------------------------------
+%Images \setbox0=\hbox{\XeteXpicfile "mypic.jpg"}
+%--------------------------------------------------------------------------------
+%{\setlength{\baselineskip}{1.5\baselineskip}
+%...your text...
+%\par}
+%--------------------------------------------------------------------------------
+
+\end{document}
